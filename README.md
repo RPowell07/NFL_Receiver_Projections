@@ -1,13 +1,13 @@
-# Projecting NFL Receiver Stats for Upcoming Season
+# Projecting NFL Receiving Stats for Upcoming Season
 Capstone Project for General Assembly Data Science Immersive Course
 
 ## Project Statement:
-Create a model to predict Receptions, Yardage, and Touchdowns for Wide Receivers, Runningbacks and Tight Ends, which can be used by both NFL GMs or Fantasy Football GMs to make roster decisions.
+Create models to predict Receptions, Yardage, and Touchdowns for Wide Receivers, Runningbacks and Tight Ends, which can be used by both NFL GMs or Fantasy Football GMs to make roster decisions.
 
 ## Background
 Projecting players statistics can be used in many different situations, whether it's trying to predict a contract for a free agent player, to trying to determine which player to draft in fantasy football. Being able to make accurate predictions will help make an informed decision improve outcomes, whether that's not overpaying or underpaying for a player, or winning a fantasy football draft.
 
-This project aims to create a model for predicting passing yards, receptions and touchdowns for all passcatching positions (wide receiver, tight end, and runningback).
+This project aims to create  models to predict passing yards, receptions and touchdowns for all passcatching positions (wide receiver, tight end, and runningback).
 
 
 ## Notebooks
@@ -73,6 +73,29 @@ Pandas, numpy, sci-kit learn, seaborn, matplotlib
 ## Conclusions
 
 
+	
+|Player | Receptions |Yards |Touchdowns |	
+|------|------|--------|--------|
+|Cooper Kupp	|116.0	|1365.0	|9.0|
+|Davante Adams	|107.0	|1240.0	|8.0|
+|Justin Jefferson	|100.0	|1359.0	|9.0|
+|Stefon Diggs	|85.0	|1089.0	|8.0|
+|Chris Godwin	|84.0	|972.0	|7.0|
+|Tyler Lockett	|84.0	|1035.0	|7.0|
+|Mike Williams	|82.0	|1111.0	|7.0|
+|Deebo Samuel	|81.0	|1016.0	|6.0|
+|Diontae Johnson	|79.0	|893.0	|5.0|
+|Tyreek Hill	|79.0	|969.0	|8.0|
+|D.K. Metcalf	|79.0	|1062.0	|8.0|
+|Ja'Marr Chase	|77.0	|1010.0	|7.0|
+|Amari Cooper	|75.0	|975.0	|7.0|
+|Mark Andrews	|75.0	|876.0	|5.0|
+|Travis Kelce	|74.0	|889.0	|7.0|
+|Terry McLaurin	|73.0	|968.0	|6.0|
+|Mike Evans	|73.0	|959.0	|8.0|
+|A.J. Brown	|73.0	|977.0	|7.0|
+|Tee Higgins	|71.0	|933.0	|5.0|
+|Hunter Renfrow	|71.0	|765.0	|5.0|
 
 Additional pieces that would improve my model:
 Quarterback play. Heavily impacts players who have to catch their passes.
