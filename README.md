@@ -2,24 +2,24 @@
 Capstone Project for General Assembly Data Science Immersive Course
 
 ## Project Statement:
-Create models to predict Receptions, Yardage, and Touchdowns for Wide Receivers, Runningbacks and Tight Ends, which can be used by both NFL GMs or Fantasy Football GMs to make roster decisions.
+Create models to predict Yardage, Receptions, and Touchdowns for Wide Receivers, Runningbacks and Tight Ends, which can be used by Fantasy Football GMs to make roster decisions.
 
 ## Background
 Projecting players statistics can be used in many different situations, whether it's trying to predict a contract for a free agent player, to trying to determine which player to draft in fantasy football. Being able to make accurate predictions will help make an informed decision improve outcomes, whether that's not overpaying or underpaying for a player, or winning a fantasy football draft.
 
-This project aims to create  models to predict passing yards, receptions and touchdowns for all passcatching positions (wide receiver, tight end, and runningback).
+This project aims to create models to predict passing yards, receptions and touchdowns for all passcatching positions (wide receiver, tight end, and runningback) for the upcoming 2022 NFL season.
 
 
 ## Notebooks
-* [`draft_year.ipynb`](./code/draft_year.ipynb): Notebook combining all draft datasets between 2001 and 2022.
-* [`debut_year.ipynb`](./code/debut_year.ipynb): Notebook combining all debut datasets between 2001 and 2021.
-* [`rookies.ipynb`](./code/rookies.ipynb): Notebook combining rookie statistics between 2018 and 2021.
-* [`receiving_stats.ipynb`](./code/receiving_stats.ipynb): Notebook to merge and clean data for data analysis and modeling.
-* [`data_analysis.ipynb`](./code/data_analysis.ipynb): Notebook for exploratory data analysis, images.
-* [`modeling_yards.ipynb`](./code/modeling_yards.ipynb): Notebook to build a model to predict yards.
-* [`modeling_TDs.ipynb`](./code/modeling_TDs.ipynb): Notebook to build a model to predict touchdowns.
-* [`modeling_receptions.ipynb`](./code/modeling_receptions.ipynb): Notebook to build a model to predict receptions.
-* [`predictions.ipynb`](./code/predictions.ipynb): Notebook to run our models to make predictions for the 2022 season.
+* [`01_draft_results.ipynb`](./code/01_draft_results.ipynb): Notebook combining all draft datasets between 2001 and 2022.
+* [`02_debut_year.ipynb`](./code/02_debut_year.ipynb): Notebook combining all debut datasets between 2001 and 2021.
+* [`03_rookies.ipynb`](./code/03_rookies.ipynb): Notebook combining rookie statistics between 2018 and 2021.
+* [`04_receiving_stats.ipynb`](./code/04_receiving_stats.ipynb): Notebook to merge and clean data for data analysis and modeling.
+* [`05_data_analysis.ipynb`](./code/05_data_analysis.ipynb): Notebook for exploratory data analysis, images.
+* [`06_modeling_yards.ipynb`](./code/06_modeling_yards.ipynb): Notebook to build a model to predict yards.
+* [`07_modeling_receptions.ipynb`](./code/07_modeling_receptions.ipynb): Notebook to build a model to predict receptions.
+* [`08_modeling_TDs.ipynb`](./code/08_modeling_TDs.ipynb): Notebook to build a model to predict touchdowns.
+* [`09_predictions.ipynb`](./code/09_predictions.ipynb): Notebook to run our models to make predictions for the 2022 season.
 
 
 ## Data 
@@ -65,6 +65,7 @@ Data was pulled from Pro-Football Reference ([source](https://www.pro-football-r
 | YrsPlayed | int | Number of years between when a player was drafted and current year |
 | X_-1_year | n/a | The listed stat above (represented by X) for the previous year |
 | X_-2_year | n/a | The listed stat above (represented by X) for two years prior |
+| X_target | n/a | The listed stat above (represented by X) from the following year, used for modeling |
 
 
 ### Libraries Used
@@ -72,32 +73,24 @@ Pandas, numpy, sci-kit learn, seaborn, matplotlib
 
 ## Conclusions
 
+I created 3 individual models: one for yardage, one for receptions, and one for touchdowns. Using these models, I am able to build out player projections for the upcoming season. 
 
-	
+For my final Yardage model, I used the Linear Regression Model. On our training set, the model had a training score of .579, and a testing score of .533. I chose this model because it was not as overfit as many of our other models, but it also gave us a decent testing score compared to many of our other models. 
+
+I also used a Linear Regression Model for the final Receptions model. On our training set, we had a training score of .542, and a testing score of .474, I chose this model because it had a relatively high testing score, but also did not appear too overfit.
+
+Finally, for my final Touchdown model, I used the Stacking Model that combined RandomForest, GradientBoost, AdaBoost, and Lasso models and then fed those results into a Linear Regression model. On our training set, we had a training score of .332, and a testing score of .314. I chose this model because all of our touchdown models had relatively low testing scores, but this model did not appear to be overfit and was around the same level of scores as the rest of the models. For my final Receptions model, I also used a Linear Regression Model. On our training set, we had a training score of .542, and a testing score of .474, I chose this model because it had a relatively high testing score, but also did not appear too overfit.
+
+Overall, my testing scores weren't too high, but it makes some sense. Due to the time restraints of the project, there are a number of factors I had to cut that could vastly improve my model. I believe Quarterback play would have a large impact on passing statistics, as that influences who gets targeted, and the quality of the pass. Which defenses a player plays against over the course of a season, not all teams play each other and therefore some schedules are easier than other. Also, I'd want to look at college stats to better predict rookie stats that I filled in based on draft round and position.
+
+Finally, I wanted to include my top 5 receivers for the upcoming 2022 season. The full list of predictions will be in the data folder listed as `predictions.csv`.
+
+My Top 5 Receivers for 2022 (sorted by receptions)
+
 |Player | Receptions |Yards |Touchdowns |	
 |------|------|--------|--------|
 |Cooper Kupp	|116.0	|1365.0	|9.0|
 |Davante Adams	|107.0	|1240.0	|8.0|
-|Justin Jefferson	|100.0	|1359.0	|9.0|
-|Stefon Diggs	|85.0	|1089.0	|8.0|
-|Chris Godwin	|84.0	|972.0	|7.0|
-|Tyler Lockett	|84.0	|1035.0	|7.0|
-|Mike Williams	|82.0	|1111.0	|7.0|
-|Deebo Samuel	|81.0	|1016.0	|6.0|
-|Diontae Johnson	|79.0	|893.0	|5.0|
-|Tyreek Hill	|79.0	|969.0	|8.0|
-|D.K. Metcalf	|79.0	|1062.0	|8.0|
-|Ja'Marr Chase	|77.0	|1010.0	|7.0|
-|Amari Cooper	|75.0	|975.0	|7.0|
-|Mark Andrews	|75.0	|876.0	|5.0|
-|Travis Kelce	|74.0	|889.0	|7.0|
-|Terry McLaurin	|73.0	|968.0	|6.0|
-|Mike Evans	|73.0	|959.0	|8.0|
-|A.J. Brown	|73.0	|977.0	|7.0|
-|Tee Higgins	|71.0	|933.0	|5.0|
-|Hunter Renfrow	|71.0	|765.0	|5.0|
-
-Additional pieces that would improve my model:
-Quarterback play. Heavily impacts players who have to catch their passes.
-Defenses, every year, teams play new teams
-Looking at college stats to predict rookie stats
+|Justin Jefferson	|100.0	|1359.0	|8.0|
+|Stefon Diggs	|85.0	|1089.0	|7.0|
+|Chris Godwin	|84.0	|972.0	|5.0|
