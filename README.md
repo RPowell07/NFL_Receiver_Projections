@@ -14,7 +14,7 @@ This project aims to create models to predict passing yards, receptions and touc
 
 ### Libraries Used
 All data cleaning and modeling was run in Python using the following libraries:
-Pandas, skLearn, matplotlib, Seaborn, & Geopandas
+Pandas, numpy, scikit learn, matplotlib, seaborn
 
 
 ## Notebooks
