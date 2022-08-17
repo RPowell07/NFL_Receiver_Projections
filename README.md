@@ -1,13 +1,20 @@
 # Projecting NFL Receiving Stats for Upcoming Season
-Capstone Project for General Assembly Data Science Immersive Course
+Capstone Project for General Assembly Data Science Immersive Course; Rick Powell
 
 ## Project Statement:
-Create models to predict Yardage, Receptions, and Touchdowns for Wide Receivers, Runningbacks and Tight Ends, which can be used by Fantasy Football GMs to make roster decisions.
+Create models to predict Yardage, Receptions, and Touchdowns for NFL Wide Receivers, Runningbacks and Tight Ends, which can be used by Fantasy Football GMs to make educated roster decisions.
 
 ## Background
-Projecting players statistics can be used in many different situations, whether it's trying to predict a contract for a free agent player, to trying to determine which player to draft in fantasy football. Being able to make accurate predictions will help make an informed decision improve outcomes, whether that's not overpaying or underpaying for a player, or winning a fantasy football draft.
+Every year, 32 NFL teams compete over 17 games and post-season in the hopes of winning the Super Bowl. In addition to watching football,  millions of people now play Fantasy Football each year, constructing rosters of NFL players to compete for their own league titles.
+
+Projecting NFL players statistics can be used in many different situations, whether it's trying to predict a contract for a free agent player, or in the case of this project, can be used to determine which player to draft in fantasy football. Being able to make accurate predictions will help make an informed decision and improve outcomes, whether that's not overpaying or underpaying for a player, or winning a fantasy football draft.
 
 This project aims to create models to predict passing yards, receptions and touchdowns for all passcatching positions (wide receiver, tight end, and runningback) for the upcoming 2022 NFL season.
+
+
+### Libraries Used
+All data cleaning and modeling was run in Python using the following libraries:
+Pandas, skLearn, matplotlib, Seaborn, & Geopandas
 
 
 ## Notebooks
@@ -67,9 +74,6 @@ Data was pulled from Pro-Football Reference ([source](https://www.pro-football-r
 | X_-2_year | n/a | The listed stat above (represented by X) for two years prior |
 | X_target | n/a | The listed stat above (represented by X) from the following year, used for modeling |
 
-
-### Libraries Used
-Pandas, numpy, sci-kit learn, seaborn, matplotlib
 
 ## Conclusions
 
