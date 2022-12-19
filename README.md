@@ -5,7 +5,7 @@ Capstone Project for General Assembly Data Science Immersive Course; Rick Powell
 Create models to predict Yardage, Receptions, and Touchdowns for NFL Wide Receivers, Runningbacks and Tight Ends, which can be used by Fantasy Football GMs to make educated roster decisions.
 
 ## Background
-Every year, 32 NFL teams compete over 17 games and post-season in the hopes of winning the Super Bowl. In addition to watching football,  millions of people now play Fantasy Football each year, constructing rosters of NFL players to compete for their own league titles.
+Every year, 32 NFL teams compete over 17 games and post-season in the hopes of winning the Super Bowl. In addition to watching football, millions of people now play Fantasy Football each year, constructing rosters of NFL players to compete for their own league titles.
 
 Projecting NFL players statistics can be used in many different situations, whether it's trying to predict a contract for a free agent player, or in the case of this project, can be used to determine which player to draft in fantasy football. Being able to make accurate predictions will help make an informed decision and improve outcomes, whether that's not overpaying or underpaying for a player, or winning a fantasy football draft.
 
@@ -70,24 +70,24 @@ Data was pulled from Pro-Football Reference ([source](https://www.pro-football-r
 | Pick | categorical | What pick a player was drafted (Undrafted = 260) |
 | Pos | categorical | What postion a player plays (WR, TE, RB) |
 | YrsPlayed | int | Number of years between when a player was drafted and current year |
-| X_-1_year | n/a | The listed stat above (represented by X) for the previous year |
-| X_-2_year | n/a | The listed stat above (represented by X) for two years prior |
-| X_target | n/a | The listed stat above (represented by X) from the following year, used for modeling |
+| X_-1_year | n/a | The stat listed above (represented by X) for the previous year |
+| X_-2_year | n/a | The stat listed above (represented by X) for two years prior |
+| X_target | n/a | The stat listed above (represented by X) from the following year, used for modeling |
 
 
 ## Conclusions
 
 I created 3 individual models: one for yardage, one for receptions, and one for touchdowns. Using these models, I am able to build out player projections for the upcoming season. 
 
-For my final Yardage model, I used the Linear Regression Model. On our training set, the model had a training score of .579, and a testing score of .533. I chose this model because it was not as overfit as many of our other models, but it also gave us a decent testing score compared to many of our other models. 
+For my final Yardage model, I used a GradientBoost Model. On the training set, the model had a training score of .576, and a testing score of .551. I chose this as my final yardage model because it was not as overfit as many of the other models, but it also gave us a decent testing score compared to many of our other models. 
 
-I also used a Linear Regression Model for the final Receptions model. On our training set, we had a training score of .542, and a testing score of .474, I chose this model because it had a relatively high testing score, but also did not appear too overfit.
+I also used a RandomForest Model for the final Receptions model. On the training set, we had a training score of .636, and a testing score of .513, I chose this model because it had a relatively high testing score compared to other models, and while it might be a little overfit, it was not egregious.
 
-Finally, for my final Touchdown model, I used the Stacking Model that combined RandomForest, GradientBoost, AdaBoost, and Lasso models and then fed those results into a Linear Regression model. On our training set, we had a training score of .332, and a testing score of .314. I chose this model because all of our touchdown models had relatively low testing scores, but this model did not appear to be overfit and was around the same level of scores as the rest of the models. 
+Finally, for my final Touchdown model, I used the Stacking Model that combined RandomForest, GradientBoost, AdaBoost, and Lasso models and then fed those results into a Linear Regression model. On the training set, we had a training score of .332, and a testing score of .314. I chose this model because all of the touchdown models had relatively low testing scores, but this model did not appear to be overfit and was around the same level of scores as the rest of the models. 
 
-Overall, my testing scores weren't too high, but it makes some sense. Due to the time restraints of the project, there are a number of factors I had to cut that could vastly improve my model. I believe Quarterback play would have a large impact on passing statistics, as that influences who gets targeted, and the quality of the pass. Which defenses a player plays against over the course of a season, not all teams play each other and therefore some schedules are easier than other. Also, I'd want to look at college stats to better predict rookie stats that I filled in based on draft round and position.
+Overall, the testing scores weren't too high, but it makes some sense. Due to the time restraints on the project, there are a number of factors I had to cut that I believe would vastly improve my model. Quarterback play would have a large impact on passing statistics, as that influences who gets targeted, and the quality of the passes a player would receive. Another factor is which defenses a player faces over the course of a season. Not all teams play each other and therefore strength of schedule varies from team to team. Also, I would have liked to look at college stats to better predict rookie stats that I had filled in based on draft round and position for the project.
 
-Finally, I wanted to include my top 5 receivers for the upcoming 2022 season. The full list of predictions will be in the data folder listed as `predictions.csv`.
+Finally, I've included my top 5 receivers for the upcoming 2022 season. The full list of predictions will be in the data folder listed as `predictions.csv`.
 
 My Top 5 Receivers for 2022 (sorted by receptions)
 
