@@ -1,4 +1,6 @@
-# Projecting NFL Receiving Stats for Upcoming Season
+### NOTICE April 2025: I'm currently updating this project for 2025, I plan to upload to a new Repository when complete.
+
+# Projecting NFL Receiving Stats for 2022 NFL Season
 Capstone Project for General Assembly Data Science Immersive Course; Rick Powell
 
 ## Project Statement:
